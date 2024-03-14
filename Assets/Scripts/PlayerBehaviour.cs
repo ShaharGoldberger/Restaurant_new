@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class PlayerBehaviour : MonoBehaviour
     float angularSpeed = 90;
     public GameObject aCamera; // must be connected to some object in Unity
     AudioSource footStepSound;
+    public Text openText;
+    public GameObject drawer;  
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +52,12 @@ public class PlayerBehaviour : MonoBehaviour
                 footStepSound.Play();
             }
                 
+        }
+        // checks is the player looks at drawer
+        RaycastHit hit;
+        if(Physics.Raycast(aCamera.transform.position, aCamera.transform.forward, out hit)== true)
+        {
+            // check if a player looks on drawer
         }
     }
 }
